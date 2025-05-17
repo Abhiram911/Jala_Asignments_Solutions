@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Basics Page</title>
+    <style>
+        /* Pseudo-class example */
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Pseudo-element example */
+        p::first-letter {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+
+        span::after {
+            content: " ← I'm a pseudo-element!";
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My HTML Page</h1>
+
+    <p>This is a paragraph demonstrating <i>italic</i> and <b>bold</b> text.</p>
+
+    <p><a href="#section2">Click here to jump to Section 2</a></p>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Form Label</h2>
+    <label>Name: <input type="text" name="username"></label>
+
+    <h2>Blockquote Example</h2>
+    <blockquote>
+        "Learning HTML is the first step to web development."
+    </blockquote>
+
+    <hr>
+
+    <h2>Image Example</h2>
+    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+
+    <hr>
+
+    <div id="section2">
+        <h2>Section 2</h2>
+        <p>This is another section you navigated to using an anchor link.</p>
+    </div>
+
+    <h2>Division and Span Example</h2>
+    <div>
+        <p>This is inside a div. <span>This is inside a span</span></p>
+    </div>
+
+</body>
+</html>

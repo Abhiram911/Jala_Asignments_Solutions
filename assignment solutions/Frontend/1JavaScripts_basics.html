@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Tasks</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Tasks</h1>
+
+  <!-- 2. Sort Fruits Array -->
+  <h2>2. Sort Fruits in Descending Order</h2>
+  <button onclick="sortFruits()">Sort Fruits</button>
+  <p id="fruitsOutput"></p>
+
+  <script>
+    // 1. Single line comment
+    /* 
+      This is a 
+      multiline comment 
+    */
+
+    // 2. Array and sort descending on button click
+    let fruits = ["Banana", "Apple", "Orange", "Mango", "Pineapple"];
+    function sortFruits() {
+      fruits.sort().reverse();
+      document.getElementById("fruitsOutput").innerHTML = fruits.join(", ");
+    }
+
+    // 3. FOR/IN loop example
+    console.log("3. FOR/IN loop:");
+    let car = { brand: "Toyota", model: "Camry", year: 2022 };
+    for (let key in car) {
+      console.log(key + ": " + car[key]);
+    }
+
+    // 4. Create and access person object
+    console.log("4. Person object:");
+    const person = {
+      firstname: "John",
+      lastname: "Doe"
+    };
+    console.log(person.firstname); // Method 1: Dot notation
+    console.log(person["lastname"]); // Method 2: Bracket notation
+
+    // 5. Variable hoisting (initialization before declaration)
+    console.log("5. Hoisting example:");
+    hoistedVar = "I am hoisted";
+    console.log(hoistedVar);
+    var hoistedVar; // declared after initialization
+
+    // 6. Strict Mode and error for undeclared variable
+    console.log("6. Strict Mode demo:");
+    "use strict";
+    try {
+      undeclaredVariable = 10; // Error: variable not declared
+    } catch (err) {
+      console.log("Error due to strict mode: " + err.message);
+    }
+  </script>
+
+</body>
+</html>

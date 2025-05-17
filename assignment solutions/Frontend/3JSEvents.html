@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JS Event, Validation, Console, Cookie & JSON</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  section { margin-bottom: 30px; padding: 10px; border: 1px solid #ccc; }
+  button { margin-top: 10px; }
+  .error { color: red; }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Tasks: Event Listener, Validation, Console, Cookies, JSON</h1>
+
+<!-- 1. Event Listener for current date and time -->
+<section>
+  <h2>1. Show Current Date & Time on Button Click</h2>
+  <button id="dateTimeBtn">Show Date & Time</button>
+  <p id="dateTimeDisplay"></p>
+</section>
+
+<!-- 2. JavaScript validation: textbox should not be empty -->
+<section>
+  <h2>2. JavaScript Validation on Submit</h2>
+  <form id="myForm">
+    <label for="nameInput">Name (required): </label>
+    <input type="text" id="nameInput" name="name" />
+    <button type="submit">Submit</button>
+    <p id="validationMsg" class="error"></p>
+  </form>
+</section>
+
+<!-- 3. Console.log usage explained -->
+<section>
+  <h2>3. Console.log() for Debugging</h2>
+  <button onclick="debugExample()">Run Debug Example</button>
+  <p>Open your browser console to see output.</p>
+</section>
+
+<!-- 4. Set, Get, Check cookie -->
+<section>
+  <h2>4. Cookie Management</h2>
+  <button onclick="setCookie('user', 'Alice', 7)">Set Cookie</button>
+  <button onclick="alert('Cookie Value: ' + getCookie('user'))">Get Cookie</button>
+  <button onclick="alert('Cookie Exists: ' + checkCookie('user'))">Check Cookie</button>
+</section>
+
+<!-- 5. JSON object and dot notation -->
+<section>
+  <h2>5. JSON Object Access</h2>
+  <button onclick="showJSON()">Show JSON Data</button>
+  <pre id="jsonOutput"></pre>
+</section>
+
+<script>
+// 1. Add event listener to show current date and time
+document.getElementById('dateTimeBtn').addEventListener('click', function() {
+  const now = new Date();
+  document.getElementById('dateTimeDisplay').textContent = now.toString();
+});
+
+// 2. JS validation for non-empty textbox
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  const input = document.getElementById('nameInput').value.trim();
+  const msg = document.getElementById('validationMsg');
+  if(input === "") {
+    event.preventDefault();
+    msg.textContent = "Text box cannot be empty!";
+  } else {
+    msg.textContent = "";
+    alert("Form submitted successfully with name: " + input);
+  }
+});
+
+// 3. Console.log for debugging
+function debugExample() {
+  let x = 10;
+  let y = 5;
+  console.log("Initial x:", x);
+  console.log("Initial y:", y);
+
+  x += y;
+  console.log("After adding y to x, x:", x);
+
+  // Debugging an error case
+  let obj = { name: "DebugObject", value: null };
+  console.log("Object before value assignment:", obj);
+
+  obj.value = x * 2;
+  console.log("Object after value assignment:", obj);
+
+  // Conditional logging
+  if(obj.value > 20) {
+    console.log("Value is greater than 20.");
+  }
+}
+
+// 4. Cookies functions: set, get and check
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  alert("Cookie set: " + cname + "=" + cvalue);
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i=0; i<ca.length; i++) {
+    let c = ca[i].trim();
+    if(c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie(cname) {
+  let value = getCookie(cname);
+  return value !== "";
+}
+
+// 5. JSON object and dot notation
+function showJSON() {
+  const person = {
+    firstname: "John",
+    lastname: "Doe",
+    age: 30,
+    address: {
+      city: "New York",
+      country: "USA"
+    }
+  };
+
+  const output = 
+    `First Name: ${person.firstname}\n` +
+    `Last Name: ${person.lastname}\n` +
+    `City: ${person.address.city}\n` +
+    `Country: ${person.address.country}`;
+
+  document.getElementById('jsonOutput').textContent = output;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Effects Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* 1. Shadow effect + hover for image */
+    .shadow-box {
+      width: 200px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .shadow-box:hover {
+      transform: scale(1.05);
+    }
+
+    /* 2. CSS animation */
+    @keyframes slideIn {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .animated-box {
+      width: 150px;
+      height: 150px;
+      background: lightgreen;
+      animation-name: slideIn;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    /* 2. Pagination */
+    .pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .pagination li {
+      margin: 0 5px;
+    }
+
+    .pagination a {
+      padding: 10px 15px;
+      text-decoration: none;
+      background: #eee;
+      border: 1px solid #ccc;
+      color: black;
+    }
+
+    .pagination a:hover {
+      background: #333;
+      color: white;
+    }
+
+    /* 3. Position examples */
+    .position-box {
+      border: 2px solid black;
+      margin: 20px 0;
+      padding: 10px;
+      height: 100px;
+      position: relative;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      padding: 5px;
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: blue;
+      color: white;
+      padding: 5px;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: yellow;
+      padding: 10px;
+      border: 1px solid black;
+    }
+
+    /* 4. Overflow with scroll */
+    .overflow-box {
+      width: 300px;
+      height: 100px;
+      overflow: scroll;
+      background: #f0f0f0;
+      margin: 20px 0;
+      padding: 10px;
+    }
+
+    /* 5. Image with opacity */
+    .opacity-img {
+      width: 200px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Effects Demo</h1>
+
+  <!-- 1. Shadow effect and hover -->
+  <h2>Image with Shadow & Hover</h2>
+  <img src="https://via.placeholder.com/200" class="shadow-box" alt="Sample">
+
+  <!-- 2. Animation -->
+  <h2>Animated Box</h2>
+  <div class="animated-box"></div>
+
+  <!-- 2. Pagination -->
+  <h2>Pagination</h2>
+  <ul class="pagination">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+
+  <!-- 3. Positions -->
+  <h2>Position Examples</h2>
+  <div class="sticky-box">Sticky Header</div>
+
+  <div class="position-box">
+    Relative Box
+    <div class="absolute">Absolute</div>
+  </div>
+
+  <div class="fixed">Fixed</div>
+
+  <!-- 4. Overflow scroll -->
+  <h2>Overflow Example</h2>
+  <div class="overflow-box">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis ullamcorper nulla, eget egestas tortor hendrerit at. Nulla facilisi. Quisque nec vestibulum quam.
+  </div>
+
+  <!-- 5. Opacity -->
+  <h2>Image with Opacity</h2>
+  <img src="https://via.placeholder.com/200" class="opacity-img" alt="Transparent">
+
+</body>
+</html>

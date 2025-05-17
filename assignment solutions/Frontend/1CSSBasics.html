@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Styling Example</title>
+  <style>
+    /* 1. CSS Comments are used like this */
+    
+    /* Body styling with background color and image */
+    body {
+      background-color: #f0f8ff; /* Light blue background */
+      background-image: url('https://via.placeholder.com/150');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 150px 150px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 2. Border styles for different sides */
+    .border-box {
+      border-top: 5px solid red;
+      border-right: 4px dashed green;
+      border-bottom: 3px dotted blue;
+      border-left: 2px double orange;
+      padding: 10px;
+      margin: 20px;
+    }
+
+    /* 3. Width and height examples */
+    .size-px {
+      width: 200px;
+      height: 100px;
+      background-color: lightgreen;
+      margin-bottom: 10px;
+    }
+
+    .size-percent {
+      width: 50%;
+      height: 20%;
+      background-color: lightcoral;
+    }
+
+    /* 4. Font and text styling */
+    .text-styling {
+      font-style: italic;
+      font-size: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      color: darkblue;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 class="text-styling">CSS Styling Demo Page</h1>
+
+  <div class="border-box">
+    <p>This box has different borders on each side.</p>
+  </div>
+
+  <div class="size-px">
+    Width and height in pixels.
+  </div>
+
+  <div class="size-percent">
+    Width and height in percentage.
+  </div>
+
+</body>
+</html>

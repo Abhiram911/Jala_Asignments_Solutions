@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced CSS Demonstration</title>
+  <style>
+    /* Smooth scrolling behavior for entire page */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 1. Table border with hover effect */
+    table {
+      border: 2px solid black;
+      margin-bottom: 20px;
+    }
+
+    table:hover {
+      background-color: lightyellow;
+    }
+
+    /* 2. Visibility and Display examples */
+    .visibility-example {
+      margin-bottom: 20px;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .visible {
+      visibility: visible;
+    }
+
+    .collapsed {
+      visibility: collapse;
+    }
+
+    .display-example {
+      margin-bottom: 20px;
+    }
+
+    .none {
+      display: none;
+    }
+
+    .inline {
+      display: inline;
+      background: #eee;
+    }
+
+    .block {
+      display: block;
+      background: #cde;
+    }
+
+    .contents {
+      display: contents;
+    }
+
+    .list-item {
+      display: list-item;
+    }
+
+    /* 3. Scroll to top and bottom links */
+    .scroll-links {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #ddd;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* 4. Padding and Margin examples */
+    .padding-box {
+      background: #def;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .margin-box {
+      background: #fed;
+      margin: 40px;
+    }
+
+    /* 5. Multiple background images */
+    .multi-bg {
+      background-image: url('https://via.placeholder.com/100x100'), url('https://via.placeholder.com/50x50');
+      background-position: left top, right bottom;
+      background-repeat: no-repeat;
+      background-size: 100px 100px, 50px 50px;
+      height: 200px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-links">
+    <a href="#bottom">Go to Bottom</a><br>
+    <a href="#top">Go to Top</a>
+  </div>
+
+  <h1 id="top">Advanced CSS Features</h1>
+
+  <!-- 1. Table with hover effect -->
+  <h2>Table with Hover</h2>
+  <table>
+    <tr><td>Row 1</td></tr>
+    <tr><td>Row 2</td></tr>
+  </table>
+
+  <!-- 2. Visibility & Display -->
+  <h2>Visibility Examples</h2>
+  <div class="visibility-example">
+    <p class="hidden">This is hidden (visibility:hidden)</p>
+    <p class="visible">This is visible (visibility:visible)</p>
+    <p class="collapsed">This is collapsed (visibility:collapse)</p>
+  </div>
+
+  <h2>Display Examples</h2>
+  <div class="display-example">
+    <span class="none">display: none</span>
+    <span class="inline">display: inline</span>
+    <span class="block">display: block</span>
+    <span class="contents"><b>This is display: contents</b></span>
+    <ul>
+      <li class="list-item">This is display: list-item</li>
+    </ul>
+  </div>
+
+  <!-- 4. Padding vs Margin -->
+  <h2>Padding and Margin</h2>
+  <div class="padding-box">This box has 30px padding</div>
+  <div class="margin-box">This box has 40px margin</div>
+
+  <!-- 5. Multiple Background Images -->
+  <h2>Multiple Background Images</h2>
+  <div class="multi-bg"></div>
+
+  <!-- Spacer for scroll demo -->
+  <div style="height: 1000px;"></div>
+
+  <h2 id="bottom">Bottom of the Page</h2>
+
+</body>
+</html>

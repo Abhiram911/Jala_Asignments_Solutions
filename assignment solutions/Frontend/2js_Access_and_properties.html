@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JS this, call, apply, counter, prototype</title>
+<style>
+  button { margin: 5px; }
+  #disappearBtn { margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Tasks: this, call/apply, counter, prototype</h1>
+
+<!-- 1. Using this keyword to hide button -->
+<h2>1. Hide Button using <code>this</code></h2>
+<button id="disappearBtn" onclick="hideButton(this)">Click to disappear</button>
+
+<script>
+function hideButton(btn) {
+  // 'this' refers to the clicked button element here
+  btn.style.display = "none";
+}
+</script>
+
+<!-- 2. call() and apply() demonstration -->
+<h2>2. call() vs apply()</h2>
+<button onclick="testCallApply()">Run call() and apply()</button>
+<p id="callApplyResult"></p>
+
+<script>
+function greet(greeting, punctuation) {
+  return greeting + ", " + this.name + punctuation;
+}
+
+const person = { name: "Alice" };
+
+function testCallApply() {
+  const callResult = greet.call(person, "Hello", "!");
+  const applyResult = greet.apply(person, ["Hi", "!!!"]);
+
+  document.getElementById("callApplyResult").innerHTML =
+    `<b>call()</b>: ${callResult} <br> <b>apply()</b>: ${applyResult} <br>` +
+    "<i>Difference: call() takes arguments separately, apply() takes arguments as array.</i>";
+}
+</script>
+
+<!-- 3. Simple Counter using click button -->
+<h2>3. Counter (Increment on button click)</h2>
+<button onclick="incrementCounter()">Count</button>
+<span id="counterValue">0</span>
+
+<script>
+let counter = 0;
+function incrementCounter() {
+  counter++;
+  document.getElementById("counterValue").textContent = counter;
+}
+</script>
+
+<!-- 4. Counter using getter and setter -->
+<h2>4. Counter with Getter and Setter</h2>
+<button onclick="increaseCounter()">Increment</button>
+<button onclick="resetCounter()">Reset</button>
+<p>Counter value: <span id="getterSetterValue">0</span></p>
+
+<script>
+const counterObj = {
+  _count: 0,
+  get value() {
+    return this._count;
+  },
+  set value(val) {
+    if (val >= 0) this._count = val;
+  }
+};
+
+function increaseCounter() {
+  counterObj.value = counterObj.value + 1;
+  document.getElementById("getterSetterValue").textContent = counterObj.value;
+}
+
+function resetCounter() {
+  counterObj.value = 0;
+  document.getElementById("getterSetterValue").textContent = counterObj.value;
+}
+</script>
+
+<!-- 5. Adding properties using prototype -->
+<h2>5. Adding properties via prototype</h2>
+<button onclick="showPrototype()">Show Prototype Properties</button>
+<p id="prototypeOutput"></p>
+
+<script>
+// Constructor function
+function Person(firstname, lastname) {
+  this.firstname = firstname;
+  this.lastname = lastname;
+}
+
+// Adding method to prototype
+Person.prototype.getFullName = function() {
+  return this.firstname + " " + this.lastname;
+};
+
+// Adding a new property to prototype
+Person.prototype.species = "Homo sapiens";
+
+function showPrototype() {
+  const p = new Person("Jane", "Doe");
+  const output = 
+    `Full Name: ${p.getFullName()}<br>` +
+    `Species (from prototype): ${p.species}`;
+  document.getElementById("prototypeOutput").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

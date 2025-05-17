@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple HTML Demo</title>
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <hgroup>
+      <h1>Simple Web Page</h1>
+      <h2>With Semantic & Non-Semantic Tags</h2>
+    </hgroup>
+    <nav>
+      <a href="#nonsemantic">Non-Semantic</a> |
+      <a href="#semantic">Semantic</a> |
+      <a href="#html5">HTML5 Tags</a>
+    </nav>
+  </header>
+
+  <!-- Non-Semantic Section -->
+  <section id="nonsemantic">
+    <h2>Non-Semantic Elements</h2>
+    <div>
+      <p>This is a <span style="color:blue;">highlighted text</span> using div and span.</p>
+    </div>
+  </section>
+
+  <!-- Semantic Section -->
+  <section id="semantic">
+    <h2>Semantic Elements</h2>
+
+    <article>
+      <h3>Contact Form</h3>
+      <form>
+        <label>Name: <input type="text" name="name" required></label><br><br>
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <input type="submit" value="Send">
+      </form>
+    </article>
+
+    <article>
+      <h3>Sample Table</h3>
+      <table border="1">
+        <tr><th>ID</th><th>Name</th><th>City</th></tr>
+        <tr><td>1</td><td>Ram</td><td>Delhi</td></tr>
+        <tr><td>2</td><td>Ravi</td><td>Mumbai</td></tr>
+      </table>
+    </article>
+  </section>
+
+  <!-- HTML5 Semantic Tags -->
+  <section id="html5">
+    <h2>HTML5 Semantic Tags</h2>
+
+    <article>
+      <h3>Article Content</h3>
+      <p>This article was posted on <time datetime="2024-12-01">December 1, 2024</time>.</p>
+    </article>
+
+    <aside>
+      <p>This is an aside with extra info.</p>
+    </aside>
+
+    <figure>
+      <img src="https://via.placeholder.com/100" alt="Sample">
+      <figcaption>Figure caption</figcaption>
+    </figure>
+
+    <p><mark>Important Note:</mark> Save your files regularly!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <time datetime="2025">2025</time> HTML Practice</p>
+  </footer>
+
+</body>
+</html>
